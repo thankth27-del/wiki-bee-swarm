@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bee Swarm Wiki - Professional Grid</title>
+    <header class="game-header">
+        <div class="overlay">
+            <img src="./bee/Basic_Bee.webp" alt="Logo" class="logo-img">
+            <h1>BEE SWARM SIMULATOR WIKI</h1>
+            <p>เกมนรก</p>
+        </div>
+    </header>
+    <style>
+        .game-header {
+            background-color: #575033;
+            background-image: url('https://www.transparenttextures.com/patterns/hexellence.png');
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .game-header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 3px;
+            color: #ffcc00;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .game-header p {
+            margin-top: 10px;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        .logo-img {
+            width: 80px;
+            margin-bottom: 10px;
+        }
+
+        :root {
+            --primary-gold: #c6a000;
+            --soft-gold: #fdf5e6;
+            --dark-text: #2c3e50;
+            --border-light: #e0e0e0;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: #fcfcfc;
+            color: var(--dark-text);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .wrapper {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            min-height: 100vh;
+
+        }
+
+        aside {
+            background: var(--white);
+            border-right: 1px solid var(--border-light);
+            padding: 30px 20px;
+            position: sticky;
+            top: 0px;
+
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: var(--primary-gold);
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav li {
+            margin-bottom: 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #666;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--primary-gold);
+        }
+
+        main {
+            padding: 40px;
+            max-width: 1200px;
+        }
+
+        .header-section {
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .cat-card {
+            background: var(--white);
+            border: 1px solid var(--border-light);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+        }
+
+        .cat-card h3 {
+            margin-top: 0;
+            border-left: 4px solid var(--primary-gold);
+            padding-left: 10px;
+        }
+
+        .bee-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .bee-item {
+            background: var(--white);
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .bee-item:hover {
+            border-color: var(--primary-gold);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .rarity-tag {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            padding: 2px 8px;
+            border-radius: 4px;
+            background: #eee;
+        }
+
+        .common {
+            color: #666;
+            background-color: #ffe6ff;
+        }
+
+        .legendary {
+            color: #00bcd4;
+            background-color: #e0f7fa;
+        }
+
+        .mythic {
+            color: #ff00ff;
+            background: #ffe6ff;
+        }
+
+        .event {
+            color: #00ffb3;
+            background: #e0f7fa;
+        }
+
+        .bee-img-container {
+            width: 100%;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .bee-img-container img {
+            max-width: 70px;
+            max-height: 100%;
+            object-fit: contain;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <aside>
+            <div class="logo">Bee swarm simulator </div>
+            <nav>
+                <ul>
+                    <li><a href="home bee.html">แดชบอร์ดหลัก</a></li>
+                    <li><a href="bee wiki.html">สารานุกรมผึ้ง</a></li>
+                    <li><a href="#">อุปกรณ์ทั้งหมด</a></li>
+                    <li><a href="#">แผนที่ทุ่งหญ้า</a></li>
+                    <li><a href="#">รวมเควสหมี</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main>
+            <section class="header-section">
+                <h1>สารานุกรมข้อมูลผึ้ง </h1>
+                <p style="color: #888;">ข้อมูลสถิติและความสามารถอย่างเป็นทางการของผึ้งทุกสายพันธุ์</p>
+            </section>
+
+            <div class="category-grid">
+                <div class="cat-card">
+                    <h3>ระดับความหายาก</h3>
+                    <p>รวมผึ้งตั้งแต่ระดับ Common ไปจนถึง Mythic และวิธีการได้มา</p>
+                </div>
+                <div class="cat-card">
+                    <h3>ประเภทสี</h3>
+                    <p>แยกข้อมูลตามกลุ่มสี: Red, Blue, และ Colorless เพื่อจัดทีม</p>
+                </div>
+                <div class="cat-card">
+                    <h3>ความสามารถพิเศษ</h3>
+                    <p>ข้อมูลเกี่ยวกับ Gifted Abilities และ Beequips ต่างๆ</p>
+                </div>
+            </div>
+            </h1>
+            <h2 style="margin-bottom: 20px;">ผึ้งยอดนิยม</h2>
+            <div class="bee-grid">
+                <div class="bee-item">
+                    <div class="bee-img-container"><img src="./bee/Tabby_Bee.webp" alt=""></div>
+                    <h4>Tabby Bee</h4>
+                    <span class="rarity-tag event">Event</span>
+                </div>
+                <div class="bee-item">
+                    <div class="bee-img-container"><img src="./bee/Precise_Bee.webp" alt=""></div>
+                    <h4>Precise Bee</h4>
+                    <span class="rarity-tag mythic">Mythic</span>
+                </div>
+                <div class="bee-item">
+                    <div class="bee-img-container"><img src="./bee/Diamond_Bee.webp" alt=""></div>
+                    <h4>Diamond Bee</h4>
+                    <span class="rarity-tag legendary">Legendary</span>
+                </div>
+                <div class="bee-item">
+                    <div class="bee-img-container"><img src="./bee/Spicy_Bee.webp" alt=""></div>
+                    <h4>Spicy Bee</h4>
+                    <span class="rarity-tag mythic">Mythic</span>
+                </div>
+                <div class="bee-item">
+                    <div class="bee-img-container"><img src="./bee/Buoyant_Bee_Gifted.webp" alt=""></div>
+                    <h4>Buoyant Bee</h4>
+                    <span class="rarity-tag mythic">Mythic</span>
+                </div>
+                <div class="bee-item">
+                    <div class="bee-img-container">
+                        <img src="./bee/Basic_Bee.webp" alt="">
+                    </div>
+                    <h4>Basic Bee</h4>
+                    <span class="rarity-tag common">common</span>
+                </div>
+        </main>
+    </div>
+
+</body>
+
+</html>

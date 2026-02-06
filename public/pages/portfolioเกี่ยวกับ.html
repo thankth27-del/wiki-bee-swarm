@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | ชื่อของคุณ</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- 1. การตั้งค่าพื้นฐาน (Global Styles) --- */
+        :root {
+            --primary: #3b82f6; /* สีหลัก (ฟ้าสดใส) */
+            --dark: #1e293b;    /* สีตัวอักษรเข้ม */
+            --light: #f8fafc;   /* สีพื้นหลัง */
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Prompt', sans-serif; /* ใช้ฟอนต์ Prompt */
+        }
+
+        html {
+            scroll-behavior: smooth; /* เลื่อนหน้าแบบนุ่มนวล */
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0; /* ระยะห่างระหว่าง Section */
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--dark);
+        }
+
+        /* --- 2. Navigation Bar (เมนูบนสุด) --- */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px 0;
+            position: sticky; /* ติดหนึบด้านบน */
+            top: 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: var(--dark);
+            margin-left: 25px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .menu a:hover {
+            color: var(--primary);
+        }
+
+        /* --- 3. Hero Section (หน้าแรก - ส่วนบนสุด) --- */
+        .hero {
+            height: 90vh; /* สูงเกือบเต็มจอ */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, #e0f2fe 0%, #ffffff 100%);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #64748b;
+            margin-bottom: 30px;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--primary);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+            transition: transform 0.2s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+        }
+
+        /* --- 4. About Me (เกี่ยวกับเรา) --- */
+        .about-grid {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .about-img {
+            width: 300px;
+            height: 300px;
+            background-color: #cbd5e1; /* พื้นที่สำหรับรูป */
+            border-radius: 20px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background: #e0f2fe;
+            color: var(--primary);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-right: 5px;
+            margin-top: 10px;
+        }
+
+        /* --- 5. Work / Portfolio (ผลงาน) --- */
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .work-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+
+        .work-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .work-img {
+            width: 100%;
+            height: 200px;
+            background-color: #94a3b8; /* พื้นที่สำหรับรูปงาน */
+            object-fit: cover;
+        }
+
+        .work-info {
+            padding: 20px;
+        }
+
+        .work-info h3 { margin-bottom: 10px; }
+        .work-info p { font-size: 0.95rem; color: #64748b; }
+
+        /* --- 6. Contact (ติดต่อ) --- */
+        .contact-box {
+            text-align: center;
+            background: var(--dark);
+            color: var(--white);
+            padding: 60px;
+            border-radius: 20px;
+        }
+
+        .contact-box h2 { color: var(--white); }
+        
+        .contact-links a {
+            display: inline-block;
+            color: var(--white);
+            margin: 10px 15px;
+            font-size: 1.2rem;
+            text-decoration: underline;
+        }
+
+        /* --- Responsive (มือถือ) --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .about-grid { flex-direction: column; text-align: center; }
+            .about-img { width: 100%; max-width: 300px; height: 300px; margin: 0 auto; }
+            .nav-content { flex-direction: column; gap: 10px; }
+            .menu { margin-top: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container nav-content">
+            <div class="logo">MyPortfolio.</div>
+            <div class="menu">
+                <a href="../index.html">หน้าแรก</a>
+                <a href="#about">เกี่ยวกับ</a>
+                <a href="#work">ผลงาน</a>
+                <a href="#contact">ติดต่อ</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>สวัสดีครับ ผมชื่อ<br><span style="color: var(--primary);">ประภัสพงษ์ ศรีกำพล</span></h1>
+            <p>นักออกแบบ / นักพัฒนาเว็บไซต์  </p>
+            <br>
+            <a href="#work" class="btn-primary">ดูผลงานของผม</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>เกี่ยวกับตัวผม</h2>
+            <div class="about-grid">
+                <img src="../asset/frea.jpg" alt="รูปโปรไฟล์" class="about-img">
+                
+                <div class="about-text">
+                    <h3>ผมชื่อ ประภัสพงษ์ ศรีกำพล [Thank] </h3>
+                    <p style="margin: 15px 0;">
+                        ผมอาจจะเป็นนักเรียนที่มีความสามารถที่มีความสนใจด้านเทคโนโลยี
+                        และด้านการเขียนโปรแกรมคอมพิวเตอร์และมีความสามารถ
+                        ในด้านIOTและฮารดแวร์
+                        ศึกษาอยู่ที่วิทยาลัยเทคโนโลยีสยามบริหารธุกิจ
+                        เรียนสาขาเทคโนโลยีสาร สนเทศ ห้อง1/7
+                    </p>
+                    
+                    <strong>ความถนัด (Skills):</strong><br>
+                    <span class="skill-tag">HTML/CSS</span>
+                    <span class="skill-tag">Graphic Design</span>
+                    <span class="skill-tag">Video Editing</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="work">
+        <div class="container">
+            <h2>ผลงานที่ผ่านมา</h2>
+            <div class="work-grid">
+                
+                <article class="work-card">
+                    <img src="../asset/smart Vital Bed.png" alt="งานที่ 1" class="work-img">
+                    <div class="work-info">
+                        <h3>ชื่อโปรเจกต์ Smart Vital Bed</h3>
+                        <p>โปรแจกต์นี้สร้างมาเพื่อแก้ไขปัญหาผู้ป่วยติดเตียงที่ไม่สามารถช่วยเหลือตัวเองได้</p>
+                    </div>
+                </article>
+
+                <article class="work-card">
+                    <img src="../asset/Omni-Display Unit.png" alt="งานที่ 2" class="work-img">
+                    <div class="work-info">
+                        <h3>ชื่อโปรเจกต์ Omni-Display Unit </h3>
+                        <p>การเขียนโปรแกรมแสดงข้อความบน LCD
+
+การควบคุม LED หลายดวง (อาจจะทำให้ไฟวิ่งหรือกระพริบตามเงื่อนไข)
+
+การวัดค่าแรงดันไฟฟ้า เพื่อเรียนรู้เรื่องวงจรไฟฟ้า</p>
+                    </div>
+                </article>
+
+                <article class="work-card">
+                    <img src="../asset/UNO-Ping-Pong-Game.png" alt="งานที่ 3" class="work-img">
+                    <div class="work-info">
+                        <h3>ชื่อโปรเจกต์ UNO-Ping-Pong-Game</h3>
+                        <p>โปรเจกต์นี้คือการสร้างเกมปิงปองขนาดจิ๋วโดยใช้บอร์ด Arduino Uno เป็นตัวประมวลผลหลัก โดยใช้หน้าจอ LCD 16x2 เป็นสนามแข่งขัน และใช้ตัวต้านทานปรับค่าได้ (Potentiometer) แทนไม้ปิงปองเพื่อเลื่อนตำแหน่งรับลูกบอลที่วิ่งไปมาบนหน้าจอ
+
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="contact-box">
+                <h2>ขอบคุณที่เข้ามาชมครับ</h2>
+                <p>สามารถติดต่อพูดคุย หรือสอบถามรายละเอียดเพิ่มเติมได้ตามช่องทางด้านล่างนี้เลยครับ</p>
+                <br>
+                <div class="contact-links">
+                    <P>phone number 093-053-4333</P>
+                    <P>SBAC information technology 1/7</P>
+                    <a href="mailto:thankth27@gmail.com">📧 ส่งอีเมลหาผม</a>
+                    <a href="https://web.facebook.com/prapatpong.srikampol">🔵 Facebook</a>
+                    <a href="https://www.instagram.com/linuxk_/">📷 Instagram</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 20px; background: #cbd5e1;">
+        <p>&copy; 2026 Designed by Prapatpong.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Gadget Shop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            margin: 0;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: 
+             "header header"
+             "card1 card2"
+             "card3 card4"
+             "footer footer";
+            gap: 20px;
+        }
+
+        .header {
+            grid-area: header;
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+
+        .header h1 {
+            margin: 0;
+            color: #2c3e50;
+            font-size: 24px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 15px;
+            font-size: 14px;
+            color: #666;
+        }
+        .card {
+            background-color: white;
+            border-radius: 10px; 
+            padding: 30px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 150px;
+        }
+        .card1 { grid-area: card1; }
+        .card2 { grid-area: card2; }
+        .card3 { grid-area: card3; }
+        .card4 { grid-area: card4; }
+        .product {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        .price {
+            color: #7700ff; 
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .button {
+            background-color: #0092f3; 
+            color: white;
+            border: none;
+            padding: 2px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Prompt', sans-serif;
+            font-size: 14px;
+        }
+        .footer {
+            grid-area: footer;
+            text-align: center;
+            color: #777;
+            font-size: 14px;
+            margin-top: 20px;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <div class="header">
+            <h1>IT Gadget Shop</h1>
+            <div class="nav-links">
+                <span>หน้าแรก</span>
+                <span>สินค้าทั้งหมด</span>
+                <span>ตะกร้าสินค้า</span>
+            </div>
+        </div>
+
+        <div class="card card1">
+            <div class="product">หูฟังใจ</div>
+            <div class="price">฿ 100,290</div>
+            <butto class="button">ใส่ตะกร้า</button>
+        </div>
+
+        <div class="card card2">
+            <div class="product">สมาร์ทวอทช์ใจ</div>
+            <div class="price">฿ 225,500</div>
+            <button class="button">ใส่ตะกร้า</button>
+        </div>
+
+        <div class="card card3">
+            <div class="product">คีบอดเกมใจ </div>
+            <div class="price">฿ 990,122</div>
+            <button class="button">ใส่ตะกร้า</button>
+        </div>
+
+        <div class="card card4">
+            <div class="product">เมาสใจ</div>
+            <div class="price">฿ 1,120,550</div>
+            <button class="button">ใส่ตะกร้า</button>
+        </div>
+
+        <div class="footer">
+            &copy; prapatpong srikampol 1/7 number4
+        </div>
+        
+    </div>
+</body>
+</html>

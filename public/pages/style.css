@@ -1,0 +1,11 @@
+.bold{
+    font-weight: 900;
+}
+#id{
+    font-style: italic;
+    font-weight: normal;
+}
+#big{
+    font-size: large;
+    font-weight: 400;
+}

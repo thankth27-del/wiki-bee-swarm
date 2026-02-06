@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BSS Wiki - รวมรหัสโค้ดล่าสุด</title>
+    <style>
+        :root {
+            --primary-gold: #c6a000;
+            --soft-gold: #ffcc00;
+            --header-brown: #575033;
+            --dark-text: #2c3e50;
+            --border-light: #e0e0e0;
+            --white: #ffffff;
+            --bg-light: #fcfcfc;
+            --success-green: #2e7d32;
+            --expire-red: #d32f2f;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--dark-text);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        .game-header {
+            background-color: var(--header-brown);
+            background-image: url('https://www.transparenttextures.com/patterns/hexellence.png');
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .game-header h1 {
+            margin: 0;
+            font-size: 2rem;
+            color: var(--soft-gold);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Layout */
+        .wrapper {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            min-height: 100vh;
+        }
+
+        aside {
+            background: var(--white);
+            border-right: 1px solid var(--border-light);
+            padding: 30px 20px;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+        }
+
+        nav ul { list-style: none; padding: 0; }
+        nav li { margin-bottom: 15px; }
+        nav a { text-decoration: none; color: #666; font-weight: 500; transition: 0.2s; }
+        nav a:hover, nav a.active { color: var(--primary-gold); }
+
+        main { padding: 40px; max-width: 1000px; }
+
+        /* --- Code Styles --- */
+        .code-status {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .status-active { background: #e8f5e9; color: var(--success-green); border: 1px solid var(--success-green); }
+        .status-expired { background: #ffebee; color: var(--expire-red); border: 1px solid var(--expire-red); }
+
+        .code-card {
+            background: white;
+            border-radius: 12px;
+            border: 1px solid var(--border-light);
+            padding: 0;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .code-card-header {
+            background: #fffbf2;
+            padding: 15px 25px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .code-text {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: var(--header-brown);
+            letter-spacing: 1px;
+        }
+
+        .copy-btn {
+            background: var(--primary-gold);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .copy-btn:hover { background: #a88900; }
+
+        .code-details {
+            padding: 20px 25px;
+        }
+
+        .reward-list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .reward-item {
+            background: #f0f0f0;
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            border: 1px solid #ddd;
+        }
+
+        /* expired table */
+        .expired-table {
+            width: 100%;
+            border-collapse: collapse;
+            opacity: 0.7;
+        }
+        .expired-table th, .expired-table td {
+            border: 1px solid #eee;
+            padding: 10px;
+            text-align: left;
+        }
+        .expired-table th { background: #f5f5f5; }
+
+    </style>
+</head>
+
+<body>
+
+    <header class="game-header">
+        <h1>Bee Swarm Simulator Codes</h1>
+    </header>
+
+    <div class="wrapper">
+        <aside>
+            <nav>
+                <ul>
+                    <li><a href="home bee.html">หน้าหลัก</a></li>
+                    <li><a href="bee wiki.html">สารานุกรมผึ้ง</a></li>
+                    <li><a href="Items.html">อุปกรณ์ทั้งหมด</a></li>
+                    <li><a href="Quests.html">รวมเควสหมี (Quests)</a></li>
+                    <li><a href="code.html">รหัสโค้ดล่าสุด</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main>
+            <section>
+                <div class="code-status status-active">● ยังใช้งานได้อยู่ (Active Codes)</div>
+                
+                <div class="code-card">
+                    <div class="code-card-header">
+                        <span class="code-text" id="code1">BFD2024</span>
+                        <button class="copy-btn" onclick="copyCode('BFD2024')">คัดลอกโค้ด</button>
+                    </div>
+                    <div class="code-details">
+                        <p style="margin-top:0; font-weight:bold; color:#555;">ของรางวัลที่จะได้รับ:</p>
+                        <div class="reward-list">
+                            <span class="reward-item">1 Marshmallow Bee</span>
+                            <span class="reward-item">1 Tropical Drink</span>
+                            <span class="reward-item">7 Micro-Converters</span>
+                            <span class="reward-item">Honey Boost (Sunflower)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="code-card">
+                    <div class="code-card-header">
+                        <span class="code-text">DemiAn03</span>
+                        <button class="copy-btn" onclick="copyCode('DemiAn03')">คัดลอกโค้ด</button>
+                    </div>
+                    <div class="code-details">
+                        <div class="reward-list">
+                            <span class="reward-item">10 Free Tickets</span>
+                            <span class="reward-item">1 Neonberry</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="code-card">
+                    <div class="code-card-header">
+                        <span class="code-text">Roof</span>
+                        <button class="copy-btn" onclick="copyCode('Roof')">คัดลอกโค้ด</button>
+                    </div>
+                    <div class="code-details">
+                        <div class="reward-list">
+                            <span class="reward-item">5 Free Tickets</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <hr style="margin: 50px 0; border: 0; border-top: 1px solid #ddd;">
+
+            <section>
+                <div class="code-status status-expired">X หมดอายุแล้ว (Expired)</div>
+                <table class="expired-table">
+                    <thead>
+                        <tr>
+                            <th>โค้ด</th>
+                            <th>ของรางวัล (อ้างอิง)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>BeesBuzz123</td>
+                            <td>10 Cloud Vials, 5 Bitterberries</td>
+                        </tr>
+                        <tr>
+                            <td>Discord100k</td>
+                            <td>Marshmallow Bee, Rose Field Boost</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        function copyCode(text) {
+            navigator.clipboard.writeText(text).then(function() {
+                alert("คัดลอกโค้ด " + text + " สำเร็จแล้ว! เอาไปวางในเกมได้เลย");
+            }, function(err) {
+                console.error('Could not copy text: ', err);
+            });
+        }
+    </script>
+
+</body>
+
+</html>

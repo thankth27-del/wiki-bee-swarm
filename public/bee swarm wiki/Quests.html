@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BSS Wiki - รวมเควสหมี</title>
+    <style>
+        /* --- ใช้ Root สีเดิมเพื่อให้คุมธีมเดียวกัน --- */
+        :root {
+            --primary-gold: #c6a000;
+            --soft-gold: #ffcc00;
+            --header-brown: #575033;
+            --dark-text: #2c3e50;
+            --border-light: #e0e0e0;
+            --white: #ffffff;
+            --bg-light: #fcfcfc;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--dark-text);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        .game-header {
+            background-color: var(--header-brown);
+            background-image: url('https://www.transparenttextures.com/patterns/hexellence.png');
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .game-header h1 {
+            margin: 0;
+            font-size: 2rem;
+            color: var(--soft-gold);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .logo {
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: var(--primary-gold);
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Layout */
+        .wrapper {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            min-height: 100vh;
+        }
+
+        aside {
+            background: var(--white);
+            border-right: 1px solid var(--border-light);
+            padding: 30px 20px;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+        }
+
+        nav ul { list-style: none; padding: 0; }
+        nav li { margin-bottom: 15px; }
+        nav a { text-decoration: none; color: #666; font-weight: 500; transition: 0.2s; }
+        nav a:hover, nav a.active { color: var(--primary-gold); }
+
+        main { padding: 40px; max-width: 1000px; }
+
+        /* --- Bear Quest Styles --- */
+        .bear-section {
+            background: white;
+            border-radius: 15px;
+            border: 1px solid var(--border-light);
+            margin-bottom: 40px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .bear-info {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background: #fffbf2;
+            border-bottom: 2px solid var(--soft-gold);
+        }
+
+        .bear-img {
+            width: 80px;
+            height: 80px;
+            margin-right: 20px;
+            border-radius: 10px;
+            background: #eee;
+            object-fit: contain;
+        }
+
+        .bear-details h2 {
+            margin: 0;
+            color: var(--header-brown);
+            font-size: 1.5rem;
+        }
+
+        .bear-details p {
+            margin: 5px 0 0;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        /* Quest Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+
+        th {
+            background: #f8f8f8;
+            text-align: left;
+            padding: 12px 20px;
+            border-bottom: 2px solid #eee;
+            color: var(--header-brown);
+        }
+
+        td {
+            padding: 15px 20px;
+            border-bottom: 1px solid #eee;
+            vertical-align: top;
+        }
+
+        tr:hover { background-color: #fdfdfd; }
+
+        .quest-name { font-weight: bold; color: #333; display: block; }
+        .pollen-req { color: #666; font-size: 0.85rem; list-style: none; padding: 0; margin: 5px 0; }
+        .pollen-req li::before { content: "• "; color: var(--primary-gold); }
+
+        .reward-tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            background: #e8f5e9;
+            color: #2e7d32;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .honey-reward { background: #fff8e1; color: #f57f17; }
+    </style>
+</head>
+
+<body>
+    <header class="game-header">
+        <h1>ภารกิจและเควสหมี (Bear Quests)</h1>
+    </header>
+    <div class="wrapper">
+        <aside>
+           <div class="logo" style="font-weight: 800; color: var(--primary-gold); margin-bottom: 40px;">Bee swarm simulator</div>
+            <nav>
+                <ul>
+                   <li><a href="home bee.html">หน้าหลัก</a></li>
+                    <li><a href="bee wiki.html">สารานุกรมผึ้ง</a></li>
+                    <li><a href="Items.html">อุปกรณ์ทั้งหมด</a></li>
+                    <li><a href="Quests.html">รวมเควสหมี (Quests)</a></li>
+                    <li><a href="code.html">รหัสโค้ดล่าสุด</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main>
+            <section class="bear-section">
+                <div class="bear-info">
+                    <img src="./bee/Black.webp" class="bear-img" alt="Black Bear">
+                    <div class="bear-details">
+                        <h2>Black Bear</h2>
+                        <p>เน้นการเก็บเกสรทั่วไปในทุ่งต่างๆ รางวัลหลักคือ Honey และ Mythic Egg ในเควสท้ายๆ</p>
+                    </div>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th width="30%">ชื่อภารกิจ</th>
+                            <th width="40%">เป้าหมาย (Requirements)</th>
+                            <th width="30%">ของรางวัล (Rewards)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="quest-name">Introduction</span></td>
+                            <td>
+                                <ul class="pollen-req">
+                                    <li>เก็บ 100 Pollen จาก Sunflower Field</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <span class="reward-tag honey-reward">500 Honey</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="quest-name">Flower Finder</span></td>
+                            <td>
+                                <ul class="pollen-req">
+                                    <li>เก็บ 500 Pollen จาก Mushroom Field</li>
+                                    <li>เก็บ 500 Pollen จาก Blue Flower Field</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <span class="reward-tag honey-reward">2,500 Honey</span>
+                                <span class="reward-tag">5 Ticket</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="bear-section">
+                <div class="bear-info">
+                    <img src="./bee/MotherBearTrans.webp" class="bear-img" alt="Mother Bear">
+                    <div class="bear-details">
+                        <h2>Mother Bear</h2>
+                        <p>เน้นการอัปเลเวลผึ้งและการให้อาหาร (Treats) รางวัลหลักคือ Star Treat</p>
+                    </div>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th width="30%">ชื่อภารกิจ</th>
+                            <th width="40%">เป้าหมาย (Requirements)</th>
+                            <th width="30%">ของรางวัล (Rewards)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="quest-name">Raising a Bee</span></td>
+                            <td>
+                                <ul class="pollen-req">
+                                    <li>ทำให้ผึ้งเลเวล 2 จำนวน 1 ตัว</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <span class="reward-tag honey-reward">1,000 Honey</span>
+                                <span class="reward-tag">10 Treats</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section class="bear-section">
+                <div class="bear-info">
+                    <img src="./bee/Science.webp" class="bear-img" alt="Science Bear">
+                    <div class="bear-details">
+                        <h2>Science Bear</h2>
+                        <p>เน้นการวิจัยและเก็บเกสรเฉพาะสี รางวัลหลักคือ Science Enhancement (เพิ่มความเร็วการผลิต)</p>
+                    </div>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th width="30%">ชื่อภารกิจ</th>
+                            <th width="40%">เป้าหมาย (Requirements)</th>
+                            <th width="30%">ของรางวัล (Rewards)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="quest-name">Scientific Method</span></td>
+                            <td>
+                                <ul class="pollen-req">
+                                    <li>เก็บ 10,000 White Pollen</li>
+                                    <li>เก็บ 5,000 Red Pollen</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <span class="reward-tag">Science Bear Ability</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+
+</html>
